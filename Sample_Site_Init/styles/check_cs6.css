@@ -1,0 +1,93 @@
+@charset "utf-8";
+/* CSS Document */
+
+#container {
+    width: 968px;
+    background: #FFF;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: hidden;
+}
+#main_image {
+    background-image: url(../images/20191206_104324.jpg);
+    background-repeat: no-repeat;
+    height: 376px;
+    width: 968px;
+    position: relative;
+}
+#left_column, #center_column, #right_column {
+    width: 316px;
+    float: left;
+}
+#center_column, #right_column {
+    margin-left: 10px;
+}
+h1{
+    font-family: sarina, serif;
+    font-size: 96px;
+    margin: 0;
+    float: left;
+}
+#header p{
+font-family: "Lucida Sans Ubicode"," Licuda Grande", sans-serif;
+font-size:  30px;
+font-variant: small-caps;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+#header a{
+    font-size:  20px;
+    font-weight:  bold;
+    font-variant: small-caps;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    width: 100px;
+}
+#header ul{
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    position: absolute;
+   left: 700px;
+    bottom: 0px;
+    top: 0px;
+   
+}
+ #header ul li{
+    float: left;
+ }
+#header{
+    color: rgb(253, 253, 255);
+    background-color: rgb(3, 3, 3);
+    height: 100px;
+    position: relative; 
+}
+#main_text {
+    background-color: rgb(61, 248, 15);
+    background:rgba(107, 191, 206, 0.6);
+    width: 300px;
+    position: absolute;
+    right: 60px;
+    bottom: 60px;
+    padding: 12px;
+    border-radius: 10[x];
+   
+}
+#main_text h2{
+    color: rgb(253, 8, 8);
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+#main_text h3{
+    color: rgb(8, 24, 253);
+    font-size: 16px;
+    margin: 0px;
+}
+#main_text p{
+    font-size: 14px;
+    line-height: 1.2;
+    margin: 0px;
+}

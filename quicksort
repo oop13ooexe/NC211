@@ -1,0 +1,71 @@
+package th.ac.utcc.nc231;
+
+public class QuickSort {
+	private long [] Data;
+	private int NElement;
+	public QuickSort(int Size) {
+		Data = new long [Size];
+		NElement = 0 ;
+	}
+	public void sort() {
+		recQuickSort(0,Data.length-1);
+	}
+	private void recQuickSort(int Left, int Right) {
+		if(Right-Left<=0) {
+			return;
+		}
+		else {
+			int Partition = partition(Left,Right);
+			recQuickSort(Left,Partition-1);
+			recQuickSort(Partition+1,Right);
+		}
+	}
+	private int partition(int Left, int Right) {
+		long Pivot = Data[Right];
+		int I = Left-1;
+		for(int J =Left; J< Right;J++) {
+			if(Data[J]<Pivot) {
+				I++;
+				swap(I,J);
+			}
+		}
+		swap(I+1,Right);
+		return I+1;
+	}
+	private void swap(int Left, int Right) {
+		long temp = Data[Left];
+		Data[Left]=Data[Right];
+		Data[Right]=temp;
+	}
+	public void insert(long newData) {
+		if(NElement<=Data.length) {
+			Data[NElement++]=newData;
+		}
+	}
+	public String toString() {
+		String s ="[";
+		for(int i=0;i<Data.length;i++) {
+			s+= Data[i]+" ";
+		}
+		s+="]";
+		return s;
+	}
+}
+
+
+package th.ac.utcc.nc231;
+
+public class QuickSortApp {
+
+	public static void main(String[] args) {
+		QuickSort QuickSort= new QuickSort(20);
+		for(int i=0;i<20;i++) {
+			long data = (long)(Math.random()*100);
+			QuickSort.insert(data);
+		}
+		System.out.println("Data Before Sorting :"+QuickSort);
+		QuickSort.sort();
+		System.out.println("Data After Sorting  :"+QuickSort);
+	}
+
+}

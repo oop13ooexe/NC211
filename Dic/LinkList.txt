@@ -1,0 +1,78 @@
+package th.ac.utcc.nc231;
+
+public class LinkLish {
+
+	 
+	 private Link first;
+	 
+	 public LinkLish() {
+	 
+	  first = null;
+	 
+	 }
+	 public void insertFirst(String id,String dd) {
+	  
+	  Link newlink = new Link(id,dd);
+	  newlink.next = first;
+	  first = newlink;
+	  
+	 }
+	 
+	 public Link find(String key) {
+	  Link current = first; 
+	  while(!current.iData.equals(key))
+	  {
+	   if(current.next==null)
+	    return null;
+	   else
+	    current = current.next;
+	    
+	  }
+	  return current;
+	 }
+	 
+	 
+	 public Link delete(String key) {
+	  Link current = first;
+	  Link pervious = first; 
+	  
+	  while(!current.iData.equals(key))
+	  {
+	   if(current.next==null)
+	    return null;
+	   else
+	   {
+	    pervious = current;
+	    current = current.next;
+	    
+	   }
+	    
+	  }
+	  
+	  if(current == first)
+	   first =current.next;
+	  else
+	   pervious.next =current.next;
+	  return current;
+	  
+	 }
+	 
+	 
+	 public void displayList() {
+		  
+		  System.out.println("------------------------------Word------------------------------");
+		  Link current = first;
+		  while(current!=null)
+		  {
+		   System.out.println(current.iData);
+		   current = current.next;
+		  }
+		  System.out.println();
+		  
+		 }
+		 
+		 
+		 
+		}
+
+

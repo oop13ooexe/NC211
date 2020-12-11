@@ -1,0 +1,69 @@
+package th.ac.utcc.nc231;
+import java.util.Scanner;
+public class Dictionary {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner input = new Scanner(System.in);
+
+		  tree dic = new tree();
+		    dic.insert("cat","a small animal with soft fur that people often keep as a pet. Cats catch and kill birds and mice.");
+		    dic.insert("pen","an instrument made of plastic or metal used for writing with ink");
+		    dic.insert("system","an organized set of ideas or theories or a particular way of doing something");
+		    dic.insert("out","away from the inside of a place or thing");
+		    dic.insert("print","to produce letters, pictures, etc. on paper using a machine that puts ink on the surface");
+		    dic.insert("hello","used as a greeting when you meet somebody, when you answer the telephone or when you want to attract somebody’s attention");
+		    dic.insert("easy","not difficult; done or obtained without a lot of effort or problems");
+		    dic.insert("max","maximum,at the most");
+		    dic.insert("computer","an electronic machine that can store, organize and find information, do calculations and control other machines");
+		    dic.insert("multimedia","the use of sound, pictures and film in addition to text on a screen");
+		    
+		    int i =0;
+		    while(i==0) {
+		    
+		     System.out.println("---------Dictionary---------\n"
+		      + "1---> find\n"
+		      + "2---> delete\n"
+		      + "3---> insert word\n"
+		      + "4---> all word" );
+		     int a = input.nextInt();
+		     
+		     switch(a) {
+		      case 1 : 
+		       System.out.println("What is a word?");
+		       String find = input.next();
+		       Node f = dic.find(find);
+		       if(f != null) {
+		        System.out.println(f.iData);
+		        f.displayNode();
+		       }
+		       else System.out.println("Cann't found it");
+		      break;
+		     
+		      case 2 : 
+		       System.out.println("What is a word to you delete?");
+		       String del = input.next();
+		        dic.delete(del);
+		        dic.displayiDataInOder();
+		       
+		      break;
+		    
+		      case 3 : 
+		       System.out.println("What is a word to you insert?");
+		       String word = input.next();
+		       System.out.println("What dose it mean?");
+		       String mean = input.next();
+		        dic.insert(word, mean);
+		        dic.displayiDataInOder();
+		        break;
+		      
+		      case 4 :
+		          dic.displayiDataInOder();
+		      break;
+		      
+		      default:System.out.println("Error");
+		     } 
+		    }
+
+		 }
+		}

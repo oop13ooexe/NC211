@@ -1,0 +1,55 @@
+package th.ac.utcc.nc231;
+public class StudentRecord {
+private String id;
+private String name;
+private String lastname;
+private String nickname;
+
+public String getId() {
+ return this.id;
+}
+public void setId(String id){
+	this.id=id;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public String getLastname() {
+	return lastname;
+}
+public void setLastname(String lastname) {
+	this.lastname = lastname;
+}
+public String getNickname() {
+	return nickname;
+}
+public void setNickname(String nickname) {
+	this.nickname = nickname;
+}
+public String toString() {
+	return id + "," + name+ "" + lastname +","+ nickname;
+}
+}
+
+package th.ac.utcc.nc231;
+
+public class StudentApp {
+
+	public static void main(String[] args) {
+		StudentRecord student = new StudentRecord();
+		student.setId("1910711102018");
+		student.setName("Peerapong");
+		student.setLastname("Tippanun");
+		student.setNickname("of");
+	//	System.out.println( student.getId());
+	//	System.out.println(student.getName());
+	//	System.out.println(student.getLastname());
+	//	System.out.println(student.getNickname());
+		System.out.println(student);
+		
+	}
+
+}
